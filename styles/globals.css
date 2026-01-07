@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  /* Royal Gallery palette */
+  --bg-main: #EEF4ED; /* Canvas */
+  --text-main: #0B2545; /* Ink */
+  --accent-main: #134074; /* Royal Blue */
+  --surface-main: #13315C; /* Frame */
+  --border-main: #8DA9C4; /* Detail */
+
+  /* legacy variables used by components */
+  --bg: var(--bg-main);
+  --text: var(--text-main);
+  --accent: var(--accent-main);
+  --card: var(--surface-main);
+  --borderrgba: rgba(141,169,196,0.08);
+  --gridline: rgba(141,169,196,0.04);
+  --muted: rgba(11,37,69,0.65);
+  --content-width: 1100px;
+}
+
+html,body,#__next{height:100%;}
+body{
+  background-color:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --tw-ring-color: rgba(141,169,196,0.06);
+}
+
+/* subtle grain overlay */
+body::after{
+  content:"";
+  pointer-events:none;
+  position:fixed;inset:0;z-index:0;opacity:0.06;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence baseFrequency='0.8' numOctaves='1' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.28'/></svg>");
+  mix-blend-mode:overlay;
+}
+
+/* subtle 1px background grid (floor-plan effect) */
+body::before{
+  content:"";
+  pointer-events:none;
+  position:fixed;inset:0;z-index:0;opacity:1;background-image:
+    linear-gradient(to right, var(--gridline) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--gridline) 1px, transparent 1px);
+  background-size: 72px 72px, 72px 72px;
+}
+
+/* 1px industrial borders and zero radius defaults */
+*{border-radius:6px}
+
+/* content container */
+.max-content{max-width:var(--content-width);margin-left:auto;margin-right:auto}
+
+.border-1px{border:1px solid var(--border)}
+
+.font-display{font-family: 'Playfair Display', Georgia, serif}
+
+.font-sans{font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+
+.btn-accent{background:var(--accent);color:white;padding:.6rem 1.1rem;border:1px solid var(--border-main);box-shadow:0 0 10px rgba(19,64,116,0.2);border-radius:8px}
+.btn-accent:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(19,64,116,0.22)}
+
+.status-pill{padding:.25rem .5rem;border-radius:6px;border:1px solid var(--border-main);background:transparent;font-size:.85rem;color:var(--muted)}
+.status-active{box-shadow:0 0 10px rgba(141,169,196,0.06)}
+
+.telemetry-spark{width:160px;height:42px}
+
+.mono-pre{font-family: 'Inter', monospace;font-size:0.92rem;color:var(--muted)}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* small animations */
+@keyframes pulse-slow{0%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.98)}100%{opacity:1;transform:scale(1)}}
+.pulse-slow{animation:pulse-slow 2.4s ease-in-out infinite}
+
+@keyframes spark-line{0%{stroke-dashoffset:1000}100%{stroke-dashoffset:0}}
+.spark-anim{stroke-dasharray:1000;animation:spark-line 2.2s linear infinite}
+
+.sharp{border-radius:2px}
+
+/* Spotlight effect for exhibits */
+.exhibit{background:var(--bg-main);border:1px solid var(--border-main);box-shadow:0 8px 30px rgba(11,37,69,0.06);transition:transform .28s ease, box-shadow .28s ease, filter .28s ease;position:relative;overflow:hidden;border-radius:10px}
+.exhibit:hover{transform:translateY(-6px);box-shadow:0 26px 80px rgba(11,37,69,0.08);filter:brightness(1.01)}
+
+.frame-img{width:100%;height:180px;background:linear-gradient(135deg, rgba(19,48,116,0.08), rgba(19,49,92,0.06));display:block;object-fit:cover;border-radius:8px;border:1px solid rgba(141,169,196,0.06)}
+
+.dossier-toggle{display:inline-flex;align-items:center;gap:.5rem;border:none;background:transparent;color:var(--accent);cursor:pointer}
+.dossier-content{border-top:1px solid var(--border);padding-top:0.75rem;margin-top:0.75rem}
+
+.pill-skill{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .7rem;border-radius:999px;border:1px solid rgba(11,37,69,0.04);background:transparent;color:var(--text);font-size:.9rem}
+.pill-skill:hover{box-shadow:0 8px 40px rgba(141,169,196,0.06);transform:translateY(-3px);color:var(--accent)}
+
+.timeline{border-left:1px solid var(--borderrgba);padding-left:1.25rem;margin-left:0.5rem}
+.timeline-item{position:relative;padding:1rem 0}
+.timeline-item::before{content:"";position:absolute;left:-1.05rem;top:1rem;width:12px;height:12px;border-radius:50%;background:var(--card);border:2px solid var(--accent)}
+
+/* spotlight helper: element should set --mx and --my in px */
+.spotlight-bg{position:absolute;inset:0;pointer-events:none;background-repeat:no-repeat;mix-blend-mode:screen}
+.spotlight-layer{position:absolute;inset:0;pointer-events:none}
+
+/* scan-line overlay for System Override */
+.scan-line{display:none}
+
+/* data stream log window (kept minimal in case used) */
+.data-stream{background:linear-gradient(180deg, rgba(0,0,0,0.02), transparent);padding:.5rem;border-radius:6px;border:1px solid var(--border);font-family: 'JetBrains Mono', monospace;color:var(--muted);font-size:0.84rem;max-height:72px;overflow:auto}
+.data-stream pre{margin:0}
+
+/* Add a scanning line effect for Technical Mode */
+.tech-mode-scanline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(59, 130, 246, 0.2);
+  animation: scanline 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
+}

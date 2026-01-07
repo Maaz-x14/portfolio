@@ -1,23 +1,22 @@
 module.exports = {
   content: [
-    './index.html',
-    './src/**/*.{ts,tsx,js,jsx}'
+    './pages/**/*.{js,jsx}',
+    './components/**/*.{js,jsx}',
+    './app/**/*.{js,jsx}',
   ],
   theme: {
     extend: {
       colors: {
-        console: '#0b0f14',
-        accent: '#7ef9ff',
-        glow: '#4ee1d7'
+        accent: '#3b82f6', // Electric Blue
+        bg: '#050505'
+      },
+      borderRadius: {
+        none: '0'
       },
       fontFamily: {
-        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
-        inter: ['Inter', 'ui-sans-serif', 'system-ui']
-      },
-      backgroundImage: {
-        'grid-lines': "linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)"
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
       }
-    }
+    },
   },
-  plugins: []
+  plugins: [],
 }
