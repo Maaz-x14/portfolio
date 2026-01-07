@@ -1,18 +1,19 @@
 import '../styles/globals.css'
+import { TechnicalProvider } from '../components/TechnicalContext'
 import Navbar from '../components/Navbar'
-import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
-export default function App({ Component, pageProps }){
+function MyApp({ Component, pageProps }) {
+  const [hasMounted, setHasMounted] = useState(false)
+  useEffect(()=> setHasMounted(true), [])
+
   return (
-    <>
+    <TechnicalProvider>
       <Navbar />
-      <AnimatePresence mode="wait">
-        <motion.div initial={{ clipPath: 'circle(0% at 50% 50%)' }} animate={{ clipPath: 'circle(150% at 50% 50%)' }} transition={{ duration: 0.9, ease: 'easeInOut' }} className="fixed inset-0 z-40 pointer-events-none bg-[var(--bg)]" />
-
-        <motion.main key="app-root" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.32 }} className="min-h-screen pt-24">
-          <Component {...pageProps} />
-        </motion.main>
-      </AnimatePresence>
-    </>
+      <main className="min-h-screen pt-20">
+        <Component {...pageProps} />
+      </main>
+    </TechnicalProvider>
   )
 }
+export default MyApp

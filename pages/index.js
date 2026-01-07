@@ -1,6 +1,7 @@
 import Hero from '../components/Hero';
 import Principles from '../components/Principles';
-import TechnicalArsenal from '../components/TechnicalArsenal';
+import TheArsenal from '../components/TheArsenal';
+import ProvenOutcomes from '../components/ProvenOutcomes';
 import Journey from '../components/Journey';
 import ProjectsSection from '../components/ProjectsSection';
 import Contact from '../components/Contact';
@@ -12,7 +13,8 @@ export default function Home() {
       <main>
         <Hero />
         <Principles />
-        <TechnicalArsenal />
+        <TheArsenal />
+        <ProvenOutcomes />
         <Journey />
         <ProjectsSection />
         <Contact />
