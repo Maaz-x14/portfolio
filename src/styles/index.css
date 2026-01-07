@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-console: #0b0f14;
+  --panel: rgba(255,255,255,0.03);
+  --accent: #7ef9ff;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-console text-white font-inter;
+  background-image: url('/');
+}
+
+/* engineering grid */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 36px 36px, 36px 36px;
+  opacity: 0.5;
+}
+
+/* subtle glass panel */
+.panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(4px);
+}
+
+/* focus outline */
+:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* small utility */
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace; }
