@@ -1,6 +1,6 @@
 export default function Contact(){
   return (
-    <section id="contact" className="max-w-4xl mx-auto px-6 py-24">
+    <section id="contact" data-aos="zoom-in" data-aos-delay="200" className="max-w-4xl mx-auto px-6 py-24">
       <h2 className="text-2xl font-semibold">Contact</h2>
       <p className="mt-4 text-[var(--muted)]">I welcome conversations about product-minded engineering, Agentic AI, and sensor-driven systems.</p>
       <div className="mt-6 space-y-3">

@@ -7,7 +7,7 @@ export default function Journey(){
   ]
 
   return (
-    <section id="about" className="max-w-5xl mx-auto px-6 py-12">
+    <section id="about" data-aos="fade-up" className="max-w-5xl mx-auto px-6 py-12">
       <h2 className="text-3xl font-display">Impact Ledger</h2>
       <p className="mt-2 text-[var(--muted)]">Selected milestones and engineering outcomes. <strong>NUST — B.S. Software Engineering</strong> · <strong>CGPA 3.5</strong></p>
 

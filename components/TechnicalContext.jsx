@@ -1,4 +1,3 @@
-// components/TechnicalContext.js
 import { createContext, useContext, useEffect, useState } from 'react';
 
 const TechnicalContext = createContext();
@@ -21,7 +20,6 @@ export function TechnicalProvider({ children }) {
     });
   };
 
-  // DO NOT RENDER UNTIL MOUNTED
   if (!hasMounted) return null;
 
   return (

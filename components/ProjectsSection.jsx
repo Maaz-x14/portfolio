@@ -1,4 +1,4 @@
-import ProjectCard from './ProjectCard'
+import ProjectCard from './ProjectCard.jsx'
 import { motion } from 'framer-motion'
 
 const PROJECTS = [
@@ -35,7 +35,7 @@ export default function ProjectsSection(){
   }
 
   return (
-    <section id="projects" className="max-content px-6 py-20">
+    <section id="projects" data-aos="fade-right" data-aos-delay="200" className="max-content px-6 py-20">
       <h2 className="text-3xl font-display text-center">Project Milestones</h2>
       <p className="text-center mt-3 text-[var(--muted)]">High-fidelity exhibits framed by outcomes and impact.</p>
 
