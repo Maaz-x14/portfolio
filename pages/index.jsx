@@ -6,7 +6,7 @@ const Hero = dynamic(() => import('../components/Hero'), { ssr: false });
 const Certificates = dynamic(() => import('../components/Certificates'), { ssr: false });
 
 import Navbar from '../components/Navbar';
-import Principles from '../components/Principles';
+import Doctrine from '../components/Doctrine';
 import TheArsenal from '../components/TheArsenal';
 import ProjectsSection from '../components/ProjectsSection';
 import Journey from '../components/Journey';
@@ -14,7 +14,7 @@ import ProvenOutcomes from '../components/ProvenOutcomes';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ScrollTop from '../components/ScrollTop';
-import { TechnicalProvider } from '../components/TechnicalContext';
+// import { TechnicalProvider } from '../components/TechnicalContext';
 
 export default function Home() {
   const [hasMounted, setHasMounted] = useState(false);
@@ -23,13 +23,13 @@ export default function Home() {
   if (!hasMounted) return null;
 
   return (
-    <TechnicalProvider>
+    // <TechnicalProvider>
       <div className="min-h-screen bg-[#EEF4ED]">
         <Navbar />
         <main>
           <Hero />
           <div className="space-y-32 py-20">
-            <Principles />
+            <Doctrine />
             <ProvenOutcomes />
             <TheArsenal />
             <ProjectsSection />
@@ -41,6 +41,6 @@ export default function Home() {
         <Footer />
         <ScrollTop />
       </div>
-    </TechnicalProvider>
+    // </TechnicalProvider>
   );
 }

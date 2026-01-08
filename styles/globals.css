@@ -154,7 +154,20 @@ body::before{
 .data-stream pre{margin:0}
 
 /* Add a scanning line effect for Technical Mode */
-.tech-mode-scanline::after {
+.tech-mode-scanlin:root {
+  --steel-blue: #4a90e2; /* Or your brand color */
+  --muted: #666;
+}
+
+section {
+  perspective: 1000px; /* Essential for the 3D tilt */
+}
+
+/* Glassmorphism texture */
+.TechCard {
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}e::after {
   content: "";
   position: absolute;
   top: 0;
@@ -189,3 +202,46 @@ body::before{
 .icon-wrap{position:relative;display:inline-flex;align-items:center;gap:.5rem}
 .tooltip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--royal-navy);color:var(--mist-white);padding:6px 8px;border-radius:0;font-size:12px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .16s ease,transform .16s ease}
 .icon-wrap:hover .tooltip{opacity:1;transform:translateX(-50%) translateY(-4px);pointer-events:auto}
+
+:root {
+  --steel-blue: #4a90e2; /* Or your brand color */
+  --muted: #666;
+}
+
+section {
+  perspective: 1000px; /* Essential for the 3D tilt */
+}
+
+/* --- THE ARSENAL v2.0 SYSTEM OVERRIDES --- */
+
+/* Fix the container for 3D transforms */
+#expertise {
+  perspective: 1200px;
+  background-color: #050505; /* Force dark background for this section */
+}
+
+/* Specific Card styling for the Arsenal */
+.TechCard {
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* The Scanline Animation */
+@keyframes tech-scan {
+  from { top: 0%; }
+  to { top: 100%; }
+}
+
+.group:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 8px white;
+  z-index: 20;
+  animation: tech-scan 2s linear infinite;
+  pointer-events: none;
+}
+
