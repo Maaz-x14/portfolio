@@ -41,7 +41,7 @@ export default function Doctrine() {
           <motion.h2 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="text-sm font-mono tracking-[0.5em] text-[#134074]/60 uppercase"
+            className="t-ext-sm font-mono tracking-[0.5em] text-[#134074]/60 uppercase"
           >
             How I Build Things
           </motion.h2>
