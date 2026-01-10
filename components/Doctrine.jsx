@@ -64,7 +64,7 @@ export default function Doctrine() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.15, duration: 0.8 }}
-              className="relative group h-[400px] cursor-none"
+              className="relative group h-[400px]"
             >
               {/* MUSEUM PLAQUE CARD */}
               <div className="h-full w-full bg-white/40 backdrop-blur-sm border border-black/5 p-8 flex flex-col justify-between transition-all duration-500 group-hover:bg-white group-hover:shadow-2xl group-hover:shadow-[#0B2545]/5">

@@ -13,7 +13,7 @@ const techStack = [
     color: "#ed8b00",
     featured: true,
     projects: 7,
-    years: 4,
+    years: 3,
     related: ["spring-boot", "aws"],
     specs: { status: "OPTIMIZED", loadout: "Enterprise Systems, Concurrency" },
   },
@@ -72,8 +72,8 @@ const techStack = [
     src: "https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/AWS-Light.svg",
     color: "#ff9900",
     featured: true,
-    projects: 6,
-    years: 2,
+    projects: 1,
+    years: 1,
     related: ["docker", "spring-boot"],
     specs: { status: "OPERATIONAL", loadout: "EC2, S3, Lambda" },
   },
@@ -119,7 +119,23 @@ export default function TechnicalArsenal() {
 
   return (
     <section className="relative py-24 px-6 max-w-7xl mx-auto">
-      <h2 className="text-4xl font-display tracking-tight mb-6">Technical Arsenal</h2>
+      <header className="mb-20 space-y-2">
+                <motion.h2 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  className="text-sm font-mono tracking-[0.5em] text-[#134074]/60 uppercase"
+                >
+                  Core Skills
+                </motion.h2>
+                <motion.h1 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="text-6xl font-black text-[#0B2545] tracking-tighter uppercase"
+                >
+                  Technical Skills
+                </motion.h1>
+              </header>
 
       {/* CATEGORY FILTERS */}
       <div className="flex flex-wrap gap-3 mb-12">
@@ -228,7 +244,7 @@ function TechCard({ tech, index, hoveredId, setHoveredId, setTooltip }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05 }}
-      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+      // style={{ }}
       onMouseMove={handleMove}
       onMouseEnter={() => setHoveredId(tech.id)}
       onMouseLeave={() => {
@@ -246,7 +262,8 @@ function TechCard({ tech, index, hoveredId, setHoveredId, setTooltip }) {
         borderColor: isRelated ? tech.color : "rgba(141,169,196,0.3)",
         boxShadow: tech.featured 
           ? `0 0 20px ${tech.color}15` 
-          : "0 10px 30px -10px rgba(0,0,0,0.05)"
+          : "0 10px 30px -10px rgba(0,0,0,0.05)",
+        transformStyle: "preserve-3d" 
       }}
     >
       {/* Featured Background Glow */}
