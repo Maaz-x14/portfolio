@@ -6,6 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -23,17 +24,25 @@ public class PineconeService {
         this.client = builder.baseUrl(host).build();
     }
 
+    /**
+     * Upserts vectors and structured metadata to Pinecone Archive.
+     * Fixed the 'incompatible types' error by using explicit HashMap construction.
+     */
     public void upsert(List<IndexItem> items) {
-        List<Map<String, Object>> vectors = items.stream().map(item -> Map.of(
-                "id", item.getId(),
-                "values", item.getVector(), // float[] or List<Float>
-                "metadata", Map.of(
-                        "text", item.getContent(),
-                        "refCode", item.getRefCode(),
-                        "category", item.getCategory(),
-                        "title", item.getTitle()
-                )
-        )).collect(Collectors.toList());
+        List<Map<String, Object>> vectors = items.stream().map(item -> {
+            Map<String, Object> vectorEntry = new HashMap<>();
+            vectorEntry.put("id", item.getId());
+            vectorEntry.put("values", item.getVector()); // Requires getVector() in IndexItem model
+
+            Map<String, Object> metadata = new HashMap<>();
+            metadata.put("text", item.getContent());
+            metadata.put("refCode", item.getRefCode());
+            metadata.put("category", item.getCategory());
+            metadata.put("title", item.getTitle());
+
+            vectorEntry.put("metadata", metadata);
+            return vectorEntry;
+        }).collect(Collectors.toList());
 
         client.post()
                 .uri("/vectors/upsert")
@@ -45,6 +54,10 @@ public class PineconeService {
                 .block();
     }
 
+    /**
+     * Queries the vector space for the topK semantic matches.
+     * Returns a list of Match records containing text and reference codes.
+     */
     @SuppressWarnings("unchecked")
     public List<Match> query(float[] vector, int topK) {
         Map<String, Object> body = Map.of(
@@ -75,5 +88,11 @@ public class PineconeService {
         }).collect(Collectors.toList());
     }
 
-    public record Match(String id, String text, String refCode) {}
+    /**
+     * Match record supporting both standard record access and legacy getter patterns.
+     */
+    public record Match(String id, String text, String refCode) {
+        public String getRefCode() { return refCode; }
+        public String getText() { return text; }
+    }
 }
