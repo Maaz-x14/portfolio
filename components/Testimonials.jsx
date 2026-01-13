@@ -122,17 +122,13 @@ function EndorsementCard({ endorser, index }) {
           </div>
           
           <div className="flex flex-col gap-1">
-            <p className="text-[9px] font-mono text-[#134074]/40 uppercase">Verified_Channel:</p>
+            <p className="text-[9px] font-mono text-[#134074]/40 uppercase">Email:</p>
             <p className="text-[10px] font-mono text-[#134074] opacity-80 break-all">
               {endorser.email}
             </p>
           </div>
         </div>
 
-        {/* VALID SEAL */}
-        <div className="absolute -bottom-2 -right-2 text-[40px] font-black text-[#0B2545]/5 select-none rotate-12 group-hover:text-[#0B2545]/10 transition-colors">
-          PASSED
-        </div>
       </div>
     </motion.div>
   );
