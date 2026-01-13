@@ -14,53 +14,57 @@ import java.util.Map;
 @Service
 public class EmbeddingService {
 
-    @Value("${HF_API_KEY}")
+    @Value("${HF_API_KEY:}")
     private String hfApiKey;
 
     private final WebClient webClient;
-    private static final int EXPECTED_DIMENSION = 384; // Dimension for all-MiniLM-L6-v2
+    private static final int EXPECTED_DIMENSION = 384; // all-MiniLM-L6-v2
 
     public EmbeddingService(WebClient.Builder builder) {
         this.webClient = builder
-                .baseUrl("https://api-inference.huggingface.co")
+                .baseUrl("https://router.huggingface.co/api")
                 .build();
     }
 
     public float[] embed(String text) {
         if (hfApiKey == null || hfApiKey.isBlank())
-            throw new IllegalStateException("[ERROR] HF_API_KEY not configured in environment.");
+            throw new IllegalStateException("[ERROR] HF_API_KEY not configured.");
 
-        // Clean text to prevent processing errors
-        String sanitizedText = text.replace("\n", " ").trim();
+        // normalize text
+        String sanitized = text.replace("\n", " ").trim();
+        if (sanitized.length() == 0)
+            throw new IllegalArgumentException("Cannot embed empty text.");
 
-        // The Inference API expects {"inputs": "your text"}
-        List<List<Double>> response = webClient.post()
-                .uri("/models/sentence-transformers/all-MiniLM-L6-v2")
+        // HF Router API expects model + input
+        Map<String, Object> payload = Map.of(
+                "model", "sentence-transformers/all-MiniLM-L6-v2",
+                "input", sanitized
+        );
+
+        // call HF
+        List<List<Double>> output = webClient.post()
                 .header("Authorization", "Bearer " + hfApiKey)
                 .contentType(MediaType.APPLICATION_JSON)
-                .bodyValue(Map.of("inputs", sanitizedText))
+                .bodyValue(payload)
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<List<List<Double>>>() {})
-                .timeout(Duration.ofSeconds(15)) // Timeout safety
-                .retryWhen(Retry.fixedDelay(2, Duration.ofSeconds(2))) // Resilience
+                .timeout(Duration.ofSeconds(15))
+                .retryWhen(Retry.fixedDelay(2, Duration.ofSeconds(2)))
                 .block();
 
-        if (response == null || response.isEmpty())
-            throw new RuntimeException("Empty embedding response from Hugging Face.");
+        if (output == null || output.isEmpty())
+            throw new RuntimeException("Empty embedding response from HuggingFace.");
 
-        // Feature extraction returns a list of embeddings (one per input)
-        // We take the first one (index 0)
-        List<Double> vec = response.get(0);
-
+        List<Double> vec = output.get(0);
         if (vec.size() != EXPECTED_DIMENSION) {
-            throw new RuntimeException("Dimensionality mismatch. Expected " + EXPECTED_DIMENSION + " but got " + vec.size());
+            throw new RuntimeException("Embedding dimension mismatch: expected "
+                    + EXPECTED_DIMENSION + " got " + vec.size());
         }
 
-        float[] out = new float[vec.size()];
-        for (int i = 0; i < vec.size(); i++) {
-            out[i] = vec.get(i).floatValue();
-        }
+        float[] floats = new float[vec.size()];
+        for (int i = 0; i < vec.size(); i++)
+            floats[i] = vec.get(i).floatValue();
 
-        return out;
+        return floats;
     }
 }
