@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
+# Environment variables (must be provided in deployment)
+groq:
+  api-key: ${GROQ_API_KEY:}
+
+pinecone:
+  api-key: ${PINECONE_API_KEY:}
+  environment: ${PINECONE_ENVIRONMENT:}
+  index: ${PINECONE_INDEX:}
+
+embedding:
+  model-name: ${EMBEDDING_MODEL_NAME:sentence-transformers/all-MiniLM-L6-v2}
+
+admin:
+  api-key: ${ADMIN_API_KEY:changeme}
+
+cors:
+  allowed-origin: ${FRONTEND_ORIGIN:https://your-frontend.vercel.app}
