@@ -13,6 +13,7 @@ com/maaz/portfolio/controller/AdminIndexController.class
 com/maaz/portfolio/service/PromptBuilder.class
 com/maaz/portfolio/service/RateLimiter.class
 com/maaz/portfolio/controller/ChatController.class
+com/maaz/portfolio/config/OpenApiConfig.class
 com/maaz/portfolio/PortfolioApplication.class
 com/maaz/portfolio/service/EmbeddingService.class
 com/maaz/portfolio/service/ChatService.class

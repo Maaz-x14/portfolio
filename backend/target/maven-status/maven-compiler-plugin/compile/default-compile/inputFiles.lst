@@ -1,5 +1,6 @@
 /home/maazahmad/Desktop/Portfolio/backend/src/main/java/com/maaz/portfolio/controller/ChatController.java
 /home/maazahmad/Desktop/Portfolio/backend/src/main/java/com/maaz/portfolio/service/PromptBuilder.java
+/home/maazahmad/Desktop/Portfolio/backend/src/main/java/com/maaz/portfolio/config/OpenApiConfig.java
 /home/maazahmad/Desktop/Portfolio/backend/src/main/java/com/maaz/portfolio/service/RateLimiter.java
 /home/maazahmad/Desktop/Portfolio/backend/src/main/java/com/maaz/portfolio/service/RefusalGuard.java
 /home/maazahmad/Desktop/Portfolio/backend/src/main/java/com/maaz/portfolio/service/EmbeddingService.java
