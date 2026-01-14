@@ -1,0 +1,93 @@
+[
+  {
+    "id": "about_01",
+    "title": "About Maaz",
+    "category": "about",
+    "refCode": "ABOUT_ME",
+    "content": "Maaz is a Software Engineer and AI researcher specializing in intelligent systems and resilient backend infrastructure. He focuses on agentic AI, RAG pipelines, Spring Boot services, and reliable real-world systems. His core belief is intelligence over automation — systems should reason, recover from failure, and make real-world impact."
+  },
+  {
+    "id": "skills_01",
+    "title": "Core Technical Strengths",
+    "category": "skills",
+    "refCode": "SKILL_SET",
+    "content": "Languages: Java expert, Python advanced, C++, JavaScript ES6+, SQL. Backend: Spring Boot, FastAPI, Node.js. Databases: PostgreSQL, MongoDB, Redis. Cloud & DevOps: Docker, Kubernetes, AWS, Jenkins, CI/CD. AI & ML: LangChain, Llama 3.1, Groq API, FAISS, Pinecone, RAG systems, ReAct reasoning loops, Sentence Transformers. Systems & IoT: ESP32, MQTT, real-time telemetry pipelines, JWT security."
+  },
+  {
+    "id": "values_01",
+    "title": "Engineering Philosophy",
+    "category": "values",
+    "refCode": "VALUES",
+    "content": "Maaz designs systems that are scalable, self-correcting, and robust under real-world conditions. He prioritizes clarity over complexity, fault tolerance over speed hacks, and autonomous intelligent agents over brittle automation scripts."
+  },
+  {
+    "id": "proj_aqi",
+    "title": "Smart AQI Monitoring System",
+    "category": "projects",
+    "refCode": "REF_AQI_01",
+    "content": "End-to-end air quality monitoring system using ESP32, MQTT, and Spring Boot. Integrated Groq Llama 3.1 with RAG to turn raw sensor telemetry into conversational health diagnostics. Developed at NUST as a semester project with real hardware integration."
+  },
+  {
+    "id": "proj_agentic",
+    "title": "Agentic Workflow Automation System",
+    "category": "projects",
+    "refCode": "REF_AGT_02",
+    "content": "Autonomous multi-agent framework implementing ReAct reasoning loops. Agents plan, execute, reflect, and fix mistakes automatically. Built using Python, FastAPI, LangChain, and DAG orchestration. Designed as a production prototype for real enterprise use cases."
+  },
+  {
+    "id": "proj_pharma",
+    "title": "Pharmaceutical Document RAG Chatbot",
+    "category": "projects",
+    "refCode": "REF_PHR_03",
+    "content": "RAG chatbot for dense pharmaceutical PDF libraries using FAISS and Sentence Transformers. Integrated Groq API to produce grounded answers with citation references and significantly reduce hallucination. Focused on safe medical information retrieval."
+  },
+  {
+    "id": "proj_tourism",
+    "title": "Green Tourism Admin Portal",
+    "category": "projects",
+    "refCode": "REF_TRM_04",
+    "content": "Production-grade tourism management platform delivered during Planet Beyond internship. Implemented CI/CD pipelines with Jenkins, containerized microservices with Docker and Kubernetes, and enhanced Spring Boot JWT-secured APIs. Real users, real traffic."
+  },
+  {
+    "id": "proj_recommendation",
+    "title": "Course Recommendation System",
+    "category": "projects",
+    "refCode": "REF_CRS_05",
+    "content": "Machine learning course recommendation engine combining clustering and content-based similarity. Maps student interests and background to optimal course pathways. Developed as a university capstone-style semester project."
+  },
+  {
+    "id": "proj_url_shortener",
+    "title": "High-Performance URL Shortener",
+    "category": "projects",
+    "refCode": "REF_URL_06",
+    "content": "URL shortener built in Java Spring Boot with Redis caching, analytics dashboard, and click tracking. Focused on performance, scalability, and clean backend architecture."
+  },
+  {
+    "id": "edu_01",
+    "title": "Education",
+    "category": "education",
+    "refCode": "EDU_01",
+    "content": "Bachelor of Science in Software Engineering at NUST with CGPA 3.5. Projects emphasize AI systems, distributed backends, RAG, and embedded IoT development."
+  },
+  {
+    "id": "certs_01",
+    "title": "Key Certifications",
+    "category": "certifications",
+    "refCode": "CERT_LIST",
+    "content": "Generative AI Developer (HEC & ULEF), Machine Learning Specialization (DeepLearning.AI), React Development (IBM), Linux Fundamentals (LearnQuest). Focus on agentic AI, neural networks, RAG pipelines, and SPA architectures."
+  },
+  {
+    "id": "testimonials_01",
+    "title": "Testimonials",
+    "category": "testimonials",
+    "refCode": "TST_ALL",
+    "content": "Ammad Ullah Rameez – Planet Beyond: quick learner and solid engineer in Spring Boot and CI/CD. Ayesha Naseer – NUST: technically agile and disciplined. Dr. Usman Mahmood – NUST: strong understanding of complex architectures and AI systems."
+  },
+  {
+    "id": "hobbies_01",
+    "title": "Personal Interests",
+    "category": "personal",
+    "refCode": "HOB_01",
+    "content": "Enjoys football, ping pong, movies, memes, discovering good food, and meeting new people. Curious, social, and humor-driven personality."
+  }
+]

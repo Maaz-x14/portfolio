@@ -6,21 +6,20 @@ spring:
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER
 
-# Environment variables (must be provided in deployment)
+# Environment variables mapping
 groq:
   api-key: ${GROQ_API_KEY:}
 
 pinecone:
   api-key: ${PINECONE_API_KEY:}
-  environment: ${PINECONE_ENVIRONMENT:}
-  index: ${PINECONE_INDEX:}
-  host: ${PINECONE_HOST:}  # Add this line with the colon at the end
+  host: ${PINECONE_HOST:}
 
-embedding:
-  model-name: ${EMBEDDING_MODEL_NAME:sentence-transformers/all-MiniLM-L6-v2}
+# THE FIX: Bridge the HF Key
+huggingface:
+  api-key: ${HF_API_KEY:}
 
 admin:
   api-key: ${ADMIN_API_KEY}
 
 cors:
-  allowed-origin: ${FRONTEND_ORIGIN:https://your-frontend.vercel.app}
+  allowed-origin: ${FRONTEND_ORIGIN:http://localhost:3000}

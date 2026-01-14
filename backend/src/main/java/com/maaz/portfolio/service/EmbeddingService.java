@@ -5,6 +5,7 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 import reactor.util.retry.Retry;
 
 import java.time.Duration;
@@ -14,57 +15,55 @@ import java.util.Map;
 @Service
 public class EmbeddingService {
 
-    @Value("${HF_API_KEY:}")
+    @Value("${huggingface.api-key:}")
     private String hfApiKey;
 
     private final WebClient webClient;
-    private static final int EXPECTED_DIMENSION = 384; // all-MiniLM-L6-v2
+    private static final int EXPECTED_DIMENSION = 384;
 
     public EmbeddingService(WebClient.Builder builder) {
+        // MANDATORY: The root for the new HF Inference Router
         this.webClient = builder
-                .baseUrl("https://router.huggingface.co/api")
+                .baseUrl("https://router.huggingface.co")
                 .build();
     }
 
     public float[] embed(String text) {
         if (hfApiKey == null || hfApiKey.isBlank())
-            throw new IllegalStateException("[ERROR] HF_API_KEY not configured.");
+            throw new IllegalStateException("[ERROR] HF_API_KEY is not configured.");
 
-        // normalize text
         String sanitized = text.replace("\n", " ").trim();
-        if (sanitized.length() == 0)
-            throw new IllegalArgumentException("Cannot embed empty text.");
+        Map<String, Object> payload = Map.of("inputs", sanitized);
 
-        // HF Router API expects model + input
-        Map<String, Object> payload = Map.of(
-                "model", "sentence-transformers/all-MiniLM-L6-v2",
-                "input", sanitized
-        );
+        try {
+            // THE FIX: Explicitly target the feature-extraction pipeline
+            List<Double> vec = webClient.post()
+                    .uri("/hf-inference/models/sentence-transformers/all-MiniLM-L6-v2/pipeline/feature-extraction")
+                    .header("Authorization", "Bearer " + hfApiKey.trim())
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .bodyValue(payload)
+                    .retrieve()
+                    .onStatus(status -> status.isError(), res ->
+                            res.bodyToMono(String.class).flatMap(error -> {
+                                System.err.println("❌ HF ROUTER ERROR: " + error);
+                                return Mono.error(new RuntimeException("Router API Failure"));
+                            })
+                    )
+                    // Feature extraction returns a flat List<Double> [0.1, 0.2, ...]
+                    .bodyToMono(new ParameterizedTypeReference<List<Double>>() {})
+                    .timeout(Duration.ofSeconds(20))
+                    .block();
 
-        // call HF
-        List<List<Double>> output = webClient.post()
-                .header("Authorization", "Bearer " + hfApiKey)
-                .contentType(MediaType.APPLICATION_JSON)
-                .bodyValue(payload)
-                .retrieve()
-                .bodyToMono(new ParameterizedTypeReference<List<List<Double>>>() {})
-                .timeout(Duration.ofSeconds(15))
-                .retryWhen(Retry.fixedDelay(2, Duration.ofSeconds(2)))
-                .block();
+            if (vec == null || vec.isEmpty()) throw new RuntimeException("Empty response");
 
-        if (output == null || output.isEmpty())
-            throw new RuntimeException("Empty embedding response from HuggingFace.");
+            float[] out = new float[vec.size()];
+            for (int i = 0; i < vec.size(); i++)
+                out[i] = vec.get(i).floatValue();
 
-        List<Double> vec = output.get(0);
-        if (vec.size() != EXPECTED_DIMENSION) {
-            throw new RuntimeException("Embedding dimension mismatch: expected "
-                    + EXPECTED_DIMENSION + " got " + vec.size());
+            return out;
+
+        } catch (Exception e) {
+            throw new RuntimeException("Embedding failed: " + e.getMessage());
         }
-
-        float[] floats = new float[vec.size()];
-        for (int i = 0; i < vec.size(); i++)
-            floats[i] = vec.get(i).floatValue();
-
-        return floats;
     }
 }
