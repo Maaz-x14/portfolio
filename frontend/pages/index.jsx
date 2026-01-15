@@ -15,6 +15,7 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ScrollTop from '../components/ScrollTop';
 import Testimonials from '../components/Testimonials';
+import ChatInterface from '../components/ChatInterface';
 // import { TechnicalProvider } from '../components/TechnicalContext';
 
 export default function Home() {
@@ -37,6 +38,7 @@ export default function Home() {
             <Certificates />
             <Journey />
             <Testimonials />
+            <ChatInterface />
             <Contact />
           </div>
         </main>
