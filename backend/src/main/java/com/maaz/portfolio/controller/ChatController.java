@@ -28,7 +28,7 @@ public class ChatController {
         if (!rateLimiter.allow(clientKey)) {
             return ResponseEntity.status(429).body(new ChatResponse("Rate limit exceeded", java.util.List.of()));
         }
-        ChatResponse resp = chatService.handleChat(request.getMessage(), request.getMode());
+        ChatResponse resp = chatService.handleChat(request.getMessage(), request.getMode(), request.getHistory());
         return ResponseEntity.ok(resp);
     }
 }

@@ -16,4 +16,5 @@ com/maaz/portfolio/config/OpenApiConfig.class
 com/maaz/portfolio/PortfolioApplication.class
 com/maaz/portfolio/service/EmbeddingService.class
 com/maaz/portfolio/service/ChatService.class
+com/maaz/portfolio/model/ChatRequest$Message.class
 com/maaz/portfolio/service/PineconeService$Match.class
