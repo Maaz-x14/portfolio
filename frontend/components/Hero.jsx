@@ -2,7 +2,6 @@ import React, { Suspense, useMemo, useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Float, MeshDistortMaterial, ContactShadows } from '@react-three/drei'
 import * as THREE from 'three'
-import CommandPalette from './CommandPalette' // Ensure you import the new component
 
 function Sphere({ position, color, speed, distort }) {
   const mesh = useRef()
@@ -68,8 +67,7 @@ export default function Hero() {
   })), [])
 
   return (
-    <section className="relative w-full h-screen bg-[#EEF4ED] overflow-hidden flex items-center justify-center">
-      <CommandPalette />
+    <section id="hero" className="relative w-full h-screen bg-[#EEF4ED] overflow-hidden flex items-center justify-center">
       
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 15], fov: 40 }}>

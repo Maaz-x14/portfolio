@@ -46,7 +46,7 @@ const ChatInterface = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#EEF4ED] p-4 sm:p-8">
+    <div id="chatbot" className="flex items-center justify-center min-h-screen bg-[#EEF4ED] p-4 sm:p-8">
       {/* FIXED HEIGHT CONTAINER: Prevents page jumping */}
       <div className="w-full max-w-5xl h-[75vh] flex flex-col bg-white border border-[#0B2545]/10 shadow-2xl relative overflow-hidden">
         

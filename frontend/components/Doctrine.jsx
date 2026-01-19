@@ -27,7 +27,7 @@ export default function Doctrine() {
   const containerRef = useRef(null);
 
   return (
-    <section ref={containerRef} className="py-32 px-6 bg-[#EEF4ED] relative overflow-hidden">
+    <section id="doctrine" ref={containerRef} className="py-32 px-6 bg-[#EEF4ED] relative overflow-hidden">
       {/* ARCHITECTURAL GRID BACKGROUND */}
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none" 
            style={{ 
@@ -71,9 +71,6 @@ export default function Doctrine() {
                 
                 {/* Header: Human-Readable Side */}
                 <div>
-                  <div className="text-[10px] font-mono text-[#134074]/40 mb-2 uppercase tracking-widest">
-                    Pillar 0{i + 1}
-                  </div>
                   <h3 className="text-2xl font-bold text-[#0B2545] leading-tight mb-4">
                     {step.human}
                   </h3>

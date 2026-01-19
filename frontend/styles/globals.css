@@ -231,7 +231,7 @@ section {
   from { top: 0%; }
   to { top: 100%; }
 }
-
+/* 
 .group:hover::after {
   content: "";
   position: absolute;
@@ -244,4 +244,4 @@ section {
   animation: tech-scan 2s linear infinite;
   pointer-events: none;
 }
-
+ */
