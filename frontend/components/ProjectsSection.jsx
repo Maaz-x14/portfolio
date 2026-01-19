@@ -6,64 +6,71 @@ import {
   AnimatePresence,
 } from "framer-motion";
 
-const aqi_img = "/imgs/aqi_img.png";
-
 const PROJECTS = [
   {
     id: "REF_AQI_01",
-    title: "Smart Air Quality Monitor",
+    title: "Intelligent AQI Monitor",
     humanStory:
-      "Air pollution is an invisible hazard. I engineered a system that translates raw sensor telemetry into conversational health diagnostics, telling you exactly what you are breathing and how to react.",
+      "Air pollution in urban Pakistan is a systemic crisis. I engineered a centralized intelligence layer that monitors 20+ cities in real-time, transforming raw API telemetry into life-saving health diagnostics and automated alerts.",
     impact: [
-      "Real-time AQI tracking with low-latency hardware synchronization",
-      "Deployed on-edge using ESP32 & high-precision gas sensors",
-      "Integrated Llama-3.1 RAG for contextual health reasoning",
+      "Monitors real-time AQI levels for 20+ cities in Pakistan using external API integration ",
+      "Automated hazard propagation via Spring Scheduler and Gmail SMTP notifications ",
+      "Integrated a RAG-driven Llama 3.1 chatbot to provide context-aware health advisories ",
     ],
     techDossier:
-      "On-edge ESP32 devices stream telemetry via MQTT protocols. Spring Boot manages secure ingestion and JWT-based authentication. The RAG pipeline utilizes FAISS vector indexing to ground Llama-3.1 responses.",
-    stats: { hardware: "ESP32", protocol: "MQTT", runtime: "Java/Spring" },
-    image: aqi_img,
+      "Built on a containerized PostgreSQL foundation (Docker), the Spring Boot backend manages high-frequency polling through scheduled tasks. It implements a secure JWT-based authentication layer and RBAC for administrative oversight. The frontend utilizes Leaflet.js for geospatial visualization of pollution hotspots.",
+    stats: {
+      backend: "Spring Boot",
+      database: "PostgreSQL",
+      security: "JWT/OAuth2",
+    },
+    image: "/imgs/aqi_img.png",
   },
   {
     id: "REF_AGT_02",
     title: "Agentic Workflow Platform",
     humanStory:
-      "Standard automation is fragile. I built a platform where agents observe their own failures, reason through errors using ReAct loops, and self-correct to ensure mission-critical task completion.",
+      "Standard automation is fragile and hallucinates. I engineered a local first orchestration engine where agents don't just execute, they observe their own failures, reason through errors using ReAct loops, and self-correct to ensure mission critical task completion without human intervention.",
     impact: [
-      "Visual agent orchestration using Directed Acyclic Graphs (DAG)",
-      "Autonomous ReAct reasoning loops with tool-augmented execution",
-      "High-throughput event streaming via FastAPI backends",
+      "Visual orchestration using Directed Acyclic Graphs (DAGs) for execution flow",
+      "Custom 'ReAct' (Reason + Act) loop implementation with self-correcting 'Safety Nets' to catch and fix agent hallucinations ",
+      "Real-time execution telemetry utilizing NDJSON streaming and asynchronous FastAPI event processing ",
+      "Local execution stack: file_writer (storage), tavily‑python (search), duckduckgo‑search (privacy), wikipedia (reference).",
     ],
     techDossier:
-      "Orchestration is handled via DAG state management to ensure deterministic recovery. The agent logic utilizes ReAct patterns over Llama-3.1, providing transparent logs via NDJSON streams.",
-    stats: { core: "Python", logic: "ReAct", orchestrator: "DAG" },
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000&auto=format&fit=crop",
+      "A full-stack 'Client-Server-AI' architecture designed for zero-latency local inference. The backend utilizes FastAPI with Pydantic V2 for strict schema enforcement and topological graph processing for context propagation[cite: 49, 51]. The brain runs on Ollama (Llama 3.2), featuring a fault-tolerant tool-handler that accepts ambiguous payloads and kicks the agent back into the reasoning loop if tool calls are missed.",
+    stats: {
+      core: "Python / FastAPI",
+      logic: "ReAct / DAG",
+      ai: "Ollama / Llama 3.2",
+      ui: "React Flow",
+    },
+    image: "/imgs/agentic.avif",
   },
   {
     id: "REF_PHR_03",
-    title: "Pharma Document RAG",
+    title: "Pharma Intelligence RAG",
     humanStory:
-      "Medical compliance is a high-stakes environment. This system enables domain experts to query vast PDF libraries with zero-hallucination guarantees, ensuring every answer is cited directly from source material.",
+      "Pharmaceutical compliance is a zero-margin-for-error environment. I engineered a RAG system that transforms dense PDF libraries into a searchable intelligence layer, mandating that every insight is cited directly from source leaflets with 100% grounding—eliminating the risk of LLM hallucinations in clinical context.",
     impact: [
-      "Strictly grounded answers with chunk-level source citations",
-      "Semantic retrieval across multi-thousand page datasets",
-      "Groq-accelerated inference for sub-second responses",
+      "Implemented semantic chunking to preserve logical context across drug contraindications and dosage guides",
+      "Developed a domain-specific refusal guard that rejects out-of-scope medical queries to maintain safety",
+      "Utilized Groq LPU acceleration for sub-second, context-grounded synthesis across multi-document datasets",
     ],
     techDossier:
-      "Utilizes Sentence-Transformers for document embedding. FAISS handles vector search, which feeds a Groq-accelerated LLM to synthesize answers while maintaining a strict citation chain.",
-    stats: { index: "FAISS", infer: "Groq API", security: "Encrypted" },
-    image:
-      "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2000&auto=format&fit=crop",
+      "The system utilizes a modular ingestion pipeline where pharmaceutical PDFs are processed via Sentence-Transformers into high-dimensional vectors. These are indexed in FAISS (FlatIP) for exact semantic similarity. The Groq-accelerated Llama 3.1 model acts as a retrieval agent, strictly synthesising answers using retrieved-chunk citations to maintain a verifiable audit trail.",
+    stats: {
+      index: "FAISS (FlatIP)",
+      infer: "Groq / Llama 3.1",
+      logic: "Zero-Hallucination",
+    },
+    image: "/imgs/pharma.avif",
   },
 ];
 
 export default function ProjectsSection() {
   return (
-    <section
-      id="projects"
-      className="relative py-24 px-6 max-w-7xl mx-auto"
-    >
+    <section id="projects" className="relative py-24 px-6 max-w-7xl mx-auto">
       {/* ARCHITECTURAL GRID BACKGROUND */}
       <div
         className="absolute inset-0 opacity-[0.05] pointer-events-none"
@@ -73,30 +80,30 @@ export default function ProjectsSection() {
         }}
       />
 
-        <header className="mb-20 space-y-2">
-          <motion.h2
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            className="text-sm font-mono tracking-[0.5em] text-[#134074]/60 uppercase"
-          >
-            Operational Records
-          </motion.h2>
-          <motion.h1
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-6xl font-black text-[#0B2545] tracking-tighter uppercase"
-          >
-            Project Milestones
-          </motion.h1>
-        </header>
+      <header className="mb-20 space-y-2">
+        <motion.h2
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          className="text-sm font-mono tracking-[0.5em] text-[#134074]/60 uppercase"
+        >
+          Operational Records
+        </motion.h2>
+        <motion.h1
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.1 }}
+          className="text-6xl font-black text-[#0B2545] tracking-tighter uppercase"
+        >
+          Projects
+        </motion.h1>
+      </header>
 
-        {/* REDUCED VERTICAL SPACING (From space-y-80 to space-y-48) */}
-        <div className="space-y-48">
-          {PROJECTS.map((project, index) => (
-            <ProjectExhibit key={project.id} project={project} />
-          ))}
-        </div>
+      {/* REDUCED VERTICAL SPACING (From space-y-80 to space-y-48) */}
+      <div className="space-y-48">
+        {PROJECTS.map((project, index) => (
+          <ProjectExhibit key={project.id} project={project} />
+        ))}
+      </div>
     </section>
   );
 }
@@ -173,7 +180,7 @@ function ProjectExhibit({ project }) {
               }}
             />
 
-            <h4 className="text-[10px] font-mono uppercase tracking-[0.4em] text-white/40 mb-10">
+            <h4 className="text-[12px] font-mono uppercase tracking-[0.3em] text-white mb-10">
               Technical Dossier
             </h4>
 
