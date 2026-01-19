@@ -6,19 +6,19 @@ const DOCTRINE_STEPS = [
     principle: "Scalable Foundations",
     human: "Full-Stack Orchestration",
     description: "I build end-to-end systems that handle heavy load, from robust backends to seamless user interfaces, bridging complex logic with real-world usability.",
-    tags: ["Spring Boot", "React", "MERN Stack", "Java", "SQL", "Python"]
+    tags: ["Spring Boot", "React", "MERN Stack", "Java", "SQL", "PostgreSQL" , "Python", "OAuth2", "REST APIs"]
   },
   {
     principle: "Intelligence over Automation",
     human: "Agentic Systems & RAG",
     description: "I create intelligent workflows and RAG pipelines that reason, self-correct, and deliver actionable insights beyond mere automation.",
-    tags: ["LLMs", "FastAPI", "FAISS", "LangChain", "RAG", "Transformers"]
+    tags: ["LLMs", "FastAPI", "FAISS", "LangChain", "RAG", "Transformers", "Groq", "LangGraph"]
   },
   {
     principle: "Reliability at Scale",
-    human: "IoT & Cloud Infrastructure",
-    description: "I connect physical sensors to cloud systems with real-time telemetry, CI/CD, and resilient infrastructure to ensure uninterrupted operation at scale.",
-    tags: ["Kubernetes", "Docker", "MQTT", "ESP32", "Jenkins"]
+    human: "IoT & Cloud ",
+    description: "I design resilient, cloud‑native systems with automated containerized CI/CD pipelines and reliable real‑time communication.",
+    tags: ["Kubernetes", "Docker", "MQTT", "ESP32", "Jenkins", "CI/CD", "AWS"]
   }
 ];
 
