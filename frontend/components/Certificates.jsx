@@ -135,7 +135,7 @@ export default function Certificates() {
               transition={{ delay: 0.1 }}
               className="text-6xl font-black text-[#0B2545] tracking-tighter uppercase"
             >
-              The Learning Vault
+              Certificates
             </motion.h1>
           </div>
 

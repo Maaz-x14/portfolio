@@ -6,10 +6,12 @@ import ReactMarkdown from 'react-markdown';
 import { SendHorizontal, Bot, User, Loader2, Sparkles, Terminal } from 'lucide-react';
 
 const SUGGESTED_PROMPTS = [
-  "Tell me about your RAG implementation for Pharma documents.",
-  "How did you use Kubernetes at Planet Beyond?",
-  "Explain the DAG orchestration in your agentic platform.",
-  "What was your role in the Green Tourism project?"
+  "Who is Maaz Ahmad and what is his engineering philosophy?",
+  "What projects have you worked on in the AI and IoT space?",
+  "Can you explain your RAG implementation for pharmaceutical documents?",
+  "How did you use Kubernetes and Docker during your internship at Planet Beyond?",
+  "Tell me about your educational background and technical certifications.",
+  "How do your AI agents self-correct in your workflow platform?"
 ];
 
 const ChatInterface = () => {
@@ -140,7 +142,7 @@ const ChatInterface = () => {
           <div className="p-6 bg-white border-t border-[#0B2545]/5">
             <div className="flex items-center gap-3 bg-[#F9FAFB] p-2 border border-[#0B2545]/10 focus-within:border-[#0B2545] transition-all">
               <input
-                className="flex-1 bg-transparent px-4 py-2 text-[#0B2545] font-mono text-xs focus:outline-none uppercase"
+                className="flex-1 bg-transparent px-4 py-2 text-[#0B2545] font-mono text-xs focus:outline-none"
                 value={input} 
                 onChange={(e) => setInput(e.target.value)} 
                 onKeyDown={(e) => e.key === 'Enter' && handleSend()}

@@ -1,93 +1,367 @@
 [
   {
     "id": "about_01",
-    "title": "About Maaz",
+    "title": "Maaz Ahmad: System Architect",
     "category": "about",
     "refCode": "ABOUT_ME",
-    "content": "Maaz is a Software Engineer and AI researcher specializing in intelligent systems and resilient backend infrastructure. He focuses on agentic AI, RAG pipelines, Spring Boot services, and reliable real-world systems. His core belief is intelligence over automation — systems should reason, recover from failure, and make real-world impact."
+    "content": "Maaz Ahmad is a Software Engineering junior at NUST (CGPA 3.5) and an AI Architect specializing in high-trust, intelligent systems. He bridges the gap between resilient backend infrastructure (Spring Boot/FastAPI) and cutting-edge AI (RAG/Agentic Workflows). His engineering mantra, 'Intelligence over Automation,' dictates that systems should not just execute scripts but reason, self-correct, and maintain grounding in reality."
   },
   {
-    "id": "skills_01",
-    "title": "Core Technical Strengths",
+    "id": "philosophy_01",
+    "title": "Engineering Doctrine & North Star",
+    "category": "values",
+    "refCode": "PHILOSOPHY",
+    "content": "Maaz's North Star is the intersection of high performance and seamless user experience. While security (JWT/OAuth2) is a non-negotiable baseline, he prioritizes system fluidity and low-latency responses. He believes in 'Founding Engineer' logic: building with scalability and self-healing reliability from day one, favoring robust fault tolerance over brittle speed hacks."
+  },
+  {
+    "id": "learning_model_01",
+    "title": "Learning & Problem Solving Model",
+    "category": "personal",
+    "refCode": "LEARNING_MODEL",
+    "content": "Maaz utilizes a project-based learning model and reverse-engineering of complex architectures to master new tech. His debugging mindset is deconstructive; he often finds the 'semicolon' in the logic—errors that logs miss—by systematically deconstructing the system. He values the friendly, collaborative environments he experienced at Planet Beyond."
+  },
+  {
+    "id": "skills_languages",
+    "title": "Technical Arsenal: Languages",
     "category": "skills",
-    "refCode": "SKILL_SET",
-    "content": "Languages: Java expert, Python advanced, C++, JavaScript ES6+, SQL. Backend: Spring Boot, FastAPI, Node.js. Databases: PostgreSQL, MongoDB, Redis. Cloud & DevOps: Docker, Kubernetes, AWS, Jenkins, CI/CD. AI & ML: LangChain, Llama 3.1, Groq API, FAISS, Pinecone, RAG systems, ReAct reasoning loops, Sentence Transformers. Systems & IoT: ESP32, MQTT, real-time telemetry pipelines, JWT security."
+    "refCode": "SKILLS_LANG",
+    "content": "Expert in Java for enterprise systems and concurrency. Advanced in Python for AI automation, RAG pipelines, and scripting. Proficient in C++, JavaScript (ES6+), and SQL (PostgreSQL, MySQL). Skilled in building responsive dark-themed UIs with HTML/CSS and Tailwind."
   },
   {
+    "id": "skills_backend",
+    "title": "Technical Arsenal: Backend & Systems",
+    "category": "skills",
+    "refCode": "SKILLS_BACKEND",
+    "content": "Specializes in Spring Boot for robust microservices, featuring JWT/OAuth2 security, RBAC, and Swagger documentation. Proficient in FastAPI for high-performance async AI services and Node.js for scalable web apps. Experienced in database design, normalization, and persistence using PostgreSQL, MySQL, and MongoDB."
+  },
+  {
+    "id": "skills_ai_ml",
+    "title": "Technical Arsenal: AI & Machine Learning",
+    "category": "skills",
+    "refCode": "SKILLS_AI",
+    "content": "Deep expertise in LangChain and Llama 3.1/3.2 orchestration. Specialized in RAG (Retrieval-Augmented Generation) using FAISS vector indexing and semantic chunking. Experienced in Agentic Design Patterns, custom ReAct reasoning loops, and Groq API acceleration for sub-second LLM inference."
+  },
+  {
+    "id": "skills_devops",
+    "title": "Technical Arsenal: DevOps & Cloud",
+    "category": "skills",
+    "refCode": "SKILLS_DEVOPS",
+    "content": "Practiced in modern DevOps using GitHub Actions and Jenkins for automated CI/CD. Proficient in containerization with Docker and orchestration via Kubernetes (K8s). Experienced with Linux environments, AWS services (EC2, S3, Lambda), and production monitoring."
+  },
+  {
+    "id": "proj_aqi_detailed",
+    "title": "Project Exhibit: Smart AQI Monitoring",
+    "category": "projects",
+    "refCode": "REF_AQI_01",
+    "content": "A full-stack IoT platform monitoring 20+ Pakistani cities. It polls OpenMeteo API every 15 minutes for historical/forecast data and features a 20-second real-time refresh cycle. Integrated Llama 3.1 via RAG to provide conversational health advice grounded in live telemetry. Built with Spring Boot, PostgreSQL, ESP32, and Leaflet.js."
+  },
+  {
+    "id": "proj_agentic_detailed",
+    "title": "Project Exhibit: Agentic Workflow Platform",
+    "category": "projects",
+    "refCode": "REF_AGT_02",
+    "content": "A local-first AI orchestration engine enabling visual design of multi-step pipelines via DAGs. Features a custom ReAct execution loop with a 'Safety Net' that forces self-correction when agents fail tool calls. Built with FastAPI, Pydantic V2 for strict schema validation, React Flow, and Ollama (Llama 3.2)."
+  },
+  {
+    "id": "proj_pharma_detailed",
+    "title": "Project Exhibit: Pharma Document RAG",
+    "category": "projects",
+    "refCode": "REF_PHR_03",
+    "content": "A medical compliance RAG system for dense pharmaceutical PDFs. Uses semantic chunking and FAISS vector search to eliminate hallucinations, ensuring sub-second responses with chunk-level citations. Implements domain-filtering guards to reject irrelevant medical queries. Built with Python, Sentence-Transformers, and Groq."
+  },
+  {
+    "id": "exp_pb_tourism",
+    "title": "Exp: Green Tourism (Planet Beyond)",
+    "category": "experience",
+    "refCode": "EXP_PB_TRM",
+    "content": "Delivered a sustainability-focused tourism portal during a Software Engineering Internship. Developed administrative monitoring modules for user complaints and search functionality. Tech stack: Spring Boot and React. Optimized platform reach by implementing production-ready React Native features for mobile users."
+  },
+  {
+    "id": "exp_pb_devops",
+    "title": "Exp: DevOps & Stability (Planet Beyond)",
+    "category": "experience",
+    "refCode": "EXP_PB_OPS",
+    "content": "Stabilized mission-critical platforms by architecting Jenkins-driven CI/CD pipelines. Leveraged Docker and Kubernetes to automate build/test/deployment workflows. Resolved significant deployment bottlenecks by migrating to GitHub Actions, eliminating manual errors and accelerating release speed."
+  },
+  {
+    "id": "exp_pb_bookstore",
+    "title": "Exp: Secure Book Store (Planet Beyond)",
+    "category": "experience",
+    "refCode": "EXP_PB_BKS",
+    "content": "Architected a full-stack e-commerce system with advanced inventory management and search. Implemented a dual-auth layer using OAuth2 for social logins and JWT for secure session management. Integrated caching and polling to optimize backend performance, delivering fully Swagger-documented APIs."
+  },
+  {
+    "id": "edu_nust_detailed",
+    "title": "Academic Record: NUST Islamabad",
+    "category": "education",
+    "refCode": "EDU_NUST",
+    "content": "Currently in the 6th semester of B.E. Software Engineering at NUST (Expected 2027). Maintains a 3.5 CGPA with high-performance grades in Core subjects: OOP, DSA, OS, Database Systems, and Design & Analysis of Algorithms. His work bridges NUST's theoretical rigor with industrial AI/ML application."
+  },
+  {
+    "id": "certs_full",
+    "title": "Professional Credentials",
+    "category": "certifications",
+    "refCode": "CERT_FULL",
+    "content": "Generative AI Application Developer (HEC/NCEAC), Machine Learning Specialization (DeepLearning.AI), Neural Networks & Deep Learning (DeepLearning.AI), React Development (IBM), Linux Fundamentals (LearnQuest), and Git/GitHub Fundamentals (IBM)."
+  },
+  {
+    "id": "testimonials_ammad",
+    "title": "Verified Endorsement: Ammad Ullah Rameez",
+    "category": "testimonials",
+    "refCode": "TST_AMM",
+    "content": "Ammad Ullah Rameez (Sr. Software Engineer @ Planet Beyond) notes: 'Maaz is an extremely brilliant and quick learner. He demonstrated exceptional skill in architecting complex backend logic with Spring Boot and React, delivering production-ready features for our core platforms while maintaining infrastructure stability.'"
+  },
+  {
+    "id": "future_vision_01",
+    "title": "2027 Vision: Founding Engineer",
+    "category": "personal",
+    "refCode": "FUTURE",
+    "content": "Maaz aims to graduate in 2027 as a specialized AI Founding Engineer. He is focused on mastering Core AI research and RAG architectures, intending to build or lead a technical startup that prioritizes reasoning-led automation and scalable, self-healing systems."
+  }
+]
+,
+[
+    {
+    "id": "about_01",
+    "title": "Maaz Ahmad: System Architect",
+    "category": "about",
+    "refCode": "ABOUT_ME",
+    "content": "Maaz Ahmad is a Software Engineering junior at the National University of Sciences and Technology (NUST) with a CGPA of 3.5. He specializes in building AI-driven intelligent systems and describes himself as 'building dope stuff across the full stack,' from scalable Spring Boot backends to sleek mobile apps in React Native. His engineering mantra is 'Intelligence over Automation'—systems should reason and self-correct, not just execute scripts."
+    },
+    {
+    "id": "about_02",
+    "title": "The Bridge Between IoT and AI",
+    "category": "about",
+    "refCode": "IOT_AI_BRIDGE",
+    "content": "Maaz uniquely bridges the gap between IoT sensor telemetry and high-level AI reasoning. A primary example is his integration of ESP32-based air quality sensors with Groq-accelerated Llama-3.1 chatbots to provide context-aware health advice. He is currently in his 6th semester at NUST, focusing on core software engineering principles including OOP, DSA, DAA, OS, and Database systems."
+    },
+    {
+    "id": "skills_01",
+    "title": "Core Languages",
+    "category": "skills",
+    "refCode": "SKILLS_LANG",
+    "content": "Maaz's programming arsenal includes expert-level Java, advanced Python, C++, and JavaScript (ES6+). He is also proficient in HTML/CSS and SQL, utilizing both MySQL and PostgreSQL for robust data persistence."
+    },
+    {
+    "id": "skills_02",
+    "title": "Backend Frameworks & Databases",
+    "category": "skills",
+    "refCode": "SKILLS_BACKEND",
+    "content": "He specializes in Spring Boot for building scalable Java web applications and FastAPI for high-performance Python backends. His database expertise spans MySQL, PostgreSQL, MongoDB, and Firebase, with a strong focus on database design and normalization."
+    },
+    {
+    "id": "skills_03",
+    "title": "AI, ML, and RAG Architecture",
+    "category": "skills",
+    "refCode": "SKILLS_AI_ML",
+    "content": "Maaz is deeply experienced in AI/ML frameworks like LangChain, Sentence-Transformers, and FAISS for vector search. He masters RAG (Retrieval-Augmented Generation) techniques, ReAct reasoning loops, and agentic design patterns. He holds a Generative AI Application Developer Certificate from NCEAC/HEC & ULEF."
+    },
+    {
+    "id": "skills_04",
+    "title": "DevOps, Cloud, and Infrastructure",
+    "category": "skills",
+    "refCode": "SKILLS_DEVOPS",
+    "content": "He is a practiced DevOps engineer with experience in building automated CI/CD pipelines using Jenkins and GitHub Actions. His cloud and infrastructure toolkit includes Docker, Kubernetes (K8s), AWS services, Linux, and secure authentication protocols like OAuth2 and JWT."
+    },
+    {
     "id": "values_01",
     "title": "Engineering Philosophy",
     "category": "values",
     "refCode": "VALUES",
-    "content": "Maaz designs systems that are scalable, self-correcting, and robust under real-world conditions. He prioritizes clarity over complexity, fault tolerance over speed hacks, and autonomous intelligent agents over brittle automation scripts."
-  },
-  {
+    "content": "Maaz values scalable foundations, self-healing reliability, and reasoning-led automation. He prioritizes a balance between performance, security, and user experience, with a heavy emphasis on sub-second system fluidity and robust architectural integrity."
+    },
+    {
+    "id": "values_02",
+    "title": "Problem Solving & Learning Doctrine",
+    "category": "values",
+    "refCode": "LEARNING_DOCTRINE",
+    "content": "His problem-solving approach is driven by project-based learning and reverse engineering. Maaz tackles complex bugs with a deconstructive mindset—identifying logic gaps that logs often miss—and thrives in collaborative, high-growth engineering environments."
+    },
+    {
     "id": "proj_aqi",
-    "title": "Smart AQI Monitoring System",
+    "title": "Smart Air Quality Monitoring System",
     "category": "projects",
     "refCode": "REF_AQI_01",
-    "content": "End-to-end air quality monitoring system using ESP32, MQTT, and Spring Boot. Integrated Groq Llama 3.1 with RAG to turn raw sensor telemetry into conversational health diagnostics. Developed at NUST as a semester project with real hardware integration."
-  },
-  {
+    "content": "This full-stack environmental monitoring platform tracks AQI in real-time across 20+ Pakistani cities using OpenMeteo API polling. It features an ESP32 hardware prototype with MQ-series sensors that stream data via MQTT to a secure Spring Boot backend. The system stores data every 15 minutes for history/forecasts and refreshes the React+Leaflet dashboard every 20 seconds for real-time visualization. It includes a RAG-powered Llama-3.1 chatbot for conversational health advice grounded in live sensor telemetry."
+    },
+    {
     "id": "proj_agentic",
-    "title": "Agentic Workflow Automation System",
+    "title": "Agentic Workflow Automation Platform",
     "category": "projects",
     "refCode": "REF_AGT_02",
-    "content": "Autonomous multi-agent framework implementing ReAct reasoning loops. Agents plan, execute, reflect, and fix mistakes automatically. Built using Python, FastAPI, LangChain, and DAG orchestration. Designed as a production prototype for real enterprise use cases."
-  },
-  {
+    "content": "A local-first AI orchestration engine developed to visually design and execute autonomous, multi-step workflows using Directed Acyclic Graphs (DAGs). Maaz engineered a custom ReAct execution loop with Llama 3.1 that observes its own errors and self-corrects using a 'Safety Net' logic to force-execute tools like Web Search and File I/O. The system uses Pydantic V2 for strict schema validation and supports real-time execution streaming via NDJSON."
+    },
+    {
     "id": "proj_pharma",
-    "title": "Pharmaceutical Document RAG Chatbot",
+    "title": "Pharma Document RAG Chatbot",
     "category": "projects",
     "refCode": "REF_PHR_03",
-    "content": "RAG chatbot for dense pharmaceutical PDF libraries using FAISS and Sentence Transformers. Integrated Groq API to produce grounded answers with citation references and significantly reduce hallucination. Focused on safe medical information retrieval."
-  },
-  {
-    "id": "proj_tourism",
-    "title": "Green Tourism Admin Portal",
-    "category": "projects",
-    "refCode": "REF_TRM_04",
-    "content": "Production-grade tourism management platform delivered during Planet Beyond internship. Implemented CI/CD pipelines with Jenkins, containerized microservices with Docker and Kubernetes, and enhanced Spring Boot JWT-secured APIs. Real users, real traffic."
-  },
-  {
+    "content": "An intelligent RAG system designed to query dense pharmaceutical PDF libraries with zero-hallucination guarantees. It employs semantic chunking via Sentence-Transformers and performs exact semantic search using FAISS (FlatIP) indexing. Integrated with a Groq-accelerated Llama-3.1 model, it returns sub-second, context-grounded answers with mandatory chunk-level source citations. Features a modular ingestion pipeline and an interactive Gradio UI for document uploads."
+    },
+    {
+    "id": "exp_pb_01",
+    "title": "Software Engineering Internship @ Planet Beyond",
+    "category": "experience",
+    "refCode": "EXP_PLANET_BEYOND",
+    "content": "During his internship (Jul–Aug 2025), Maaz stabilized and secured high-traffic platforms like Green Tourism and Book Store. He developed full-stack features using Spring Boot and React, including advanced inventory management, search modules, and admin dashboards for complaint monitoring. He also expanded mobile reach by building production-ready React Native features."
+    },
+    {
+    "id": "exp_pb_02",
+    "title": "Infrastructure & DevOps Impact @ Planet Beyond",
+    "category": "experience",
+    "refCode": "EXP_PB_DEVOPS",
+    "content": "Maaz modernized internal deployment workflows by architecting automated CI/CD pipelines with Jenkins, Docker, and Kubernetes. This transition eliminated manual deployment errors and improved release speed across containerized environments. He also implemented secure OAuth2 and JWT-based authentication for robust role-based access control (RBAC)."
+    },
+    {
     "id": "proj_recommendation",
-    "title": "Course Recommendation System",
+    "title": "CourseFlix: Recommendation System",
     "category": "projects",
     "refCode": "REF_CRS_05",
-    "content": "Machine learning course recommendation engine combining clustering and content-based similarity. Maps student interests and background to optimal course pathways. Developed as a university capstone-style semester project."
-  },
-  {
+    "content": "A Flask-based course recommendation engine developed as a university project. Maaz built a personalized academic-path engine using TF-IDF and cosine similarity on course metadata to map student interests to curriculum outcomes. The system features a responsive dark-themed UI with similarity scores, category browsing, and trending courses."
+    },
+    {
     "id": "proj_url_shortener",
     "title": "High-Performance URL Shortener",
     "category": "projects",
     "refCode": "REF_URL_06",
-    "content": "URL shortener built in Java Spring Boot with Redis caching, analytics dashboard, and click tracking. Focused on performance, scalability, and clean backend architecture."
-  },
-  {
+    "content": "A high-performance link-shortening service built with a Spring Boot or MERN stack. It converts long URLs into custom short aliases and includes detailed analytics for tracking click counts and timestamps. The system supports custom link expirations and user authentication via hashed passwords, delivered through a mobile-responsive UI."
+    },
+    {
     "id": "edu_01",
-    "title": "Education",
+    "title": "Academic Record: NUST Islamabad",
     "category": "education",
-    "refCode": "EDU_01",
-    "content": "Bachelor of Science in Software Engineering at NUST with CGPA 3.5. Projects emphasize AI systems, distributed backends, RAG, and embedded IoT development."
-  },
-  {
+    "refCode": "EDU_NUST",
+    "content": "Pursuing a Bachelor of Engineering in Software Engineering at NUST (Expected Sep 2027) with a CGPA of 3.5. Maaz consistently maintains high academic performance, evidenced by an A+ in his Intermediate studies at Punjab Group of Colleges. His coursework emphasizes OOP, DSA, OS, Database systems, and Design & Analysis of Algorithms."
+    },
+    {
     "id": "certs_01",
-    "title": "Key Certifications",
+    "title": "Technical Certifications & Credentials",
     "category": "certifications",
     "refCode": "CERT_LIST",
-    "content": "Generative AI Developer (HEC & ULEF), Machine Learning Specialization (DeepLearning.AI), React Development (IBM), Linux Fundamentals (LearnQuest). Focus on agentic AI, neural networks, RAG pipelines, and SPA architectures."
-  },
-  {
+    "content": "Maaz holds multiple high-level certifications including the Machine Learning Specialization and Neural Networks and Deep Learning from DeepLearning.AI. Other credentials include Linux Fundamentals from LearnQuest, IBM's React Development and Git/GitHub Fundamentals, and HEC's Generative AI Application Developer Certificate."
+    },
+    {
     "id": "testimonials_01",
-    "title": "Testimonials",
+    "title": "Professional Endorsement: Planet Beyond",
     "category": "testimonials",
-    "refCode": "TST_ALL",
-    "content": "Ammad Ullah Rameez – Planet Beyond: quick learner and solid engineer in Spring Boot and CI/CD. Ayesha Naseer – NUST: technically agile and disciplined. Dr. Usman Mahmood – NUST: strong understanding of complex architectures and AI systems."
+    "refCode": "TST_AMM_ULLAH",
+    "content": "Ammad Ullah Rameez, lead at Planet Beyond, praised Maaz as a 'brilliant and quick learner,' particularly highlighting his agility in Spring Boot, React, CI/CD, and Kubernetes orchestration. Mentors have consistently noted his advanced understanding of complex software architectures, such as RAG pipelines and telemetry stacks."
+    },
+    {
+    "id": "vision_01",
+    "title": "Future Trajectory: Founding Engineer",
+    "category": "vision",
+    "refCode": "VISION_2027",
+    "content": "Maaz aims to graduate in 2027 and establish himself as a Founding Engineer at an AI-focused startup. He is dedicated to mastering Core AI research and RAG system architecture, focusing on building systems that reason and self-correct to solve real-world environmental and medical compliance challenges."
+    },
+    {
+    "id": "personal_01",
+    "title": "Personal Interests & Social Profile",
+    "category": "personal",
+    "refCode": "PERSONAL_HOBBIES",
+    "content": "Beyond engineering, Maaz is a social and humor-driven individual who enjoys football, ping pong, and discovering good food. He is passionate about meeting new people and stays current with movies and internet culture, maintaining a curious and tech-driven lifestyle."
+    }
+  ]
+,
+  [
+  {
+  "id": "about_01",
+  "title": "Identity & Mission",
+  "category": "about",
+  "refCode": "ABOUT_ME",
+  "content": "I am Maaz Ahmad, a Software Engineering junior at NUST (CGPA 3.5) and an AI Architect[cite: 70, 108]. I specialize in bridging the gap between resilient backend infrastructure and intelligent RAG/Agentic systems[cite: 109]. My engineering mantra is 'Intelligence over Automation'—I build systems that reason, self-correct, and maintain a strict grounding in technical reality[cite: 110]."
   },
   {
-    "id": "hobbies_01",
-    "title": "Personal Interests",
-    "category": "personal",
-    "refCode": "HOB_01",
-    "content": "Enjoys football, ping pong, movies, memes, discovering good food, and meeting new people. Curious, social, and humor-driven personality."
-  }
+  "id": "proj_aqi",
+  "title": "Smart AQI Monitoring System",
+  "category": "projects",
+  "refCode": "REF_AQI_01",
+  "content": "I developed a full-stack IoT platform for real-time AQI tracking across 20+ Pakistani cities[cite: 87, 120]. I engineered an ESP32 hardware prototype with MQ-series sensors that streams telemetry via MQTT to a Spring Boot backend[cite: 88, 120]. I integrated a RAG-powered Llama-3.1 chatbot to provide conversational health advice grounded in live sensor data[cite: 89, 121]."
+  },
+  {
+  "id": "proj_agentic",
+  "title": "Agentic Workflow Platform",
+  "category": "projects",
+  "refCode": "REF_AGT_02",
+  "content": "I built a local-first AI orchestration engine for visually designing multi-step agentic workflows using Directed Acyclic Graphs (DAGs)[cite: 92, 122]. I engineered a custom ReAct execution loop with Llama 3.1/3.2 that enables self-correcting agent behaviors[cite: 93, 123]. If a tool hallucination occurs, my 'Safety Net' logic detects the failure and forces the agent back into the reasoning loop[cite: 51, 125]."
+  },
+  {
+  "id": "proj_pharma",
+  "title": "Pharma Document RAG Chatbot",
+  "category": "projects",
+  "refCode": "REF_PHR_03",
+  "content": "I engineered a RAG system to process pharmaceutical PDFs using Sentence-Transformers for semantic chunking and FAISS for vector indexing[cite: 97, 127]. My implementation uses Groq-accelerated Llama-3.1 to generate sub-second responses with mandatory chunk-level citations, ensuring 100% domain relevance and eliminating clinical hallucinations[cite: 98, 129]."
+  },
+  {
+  "id": "exp_pb_devops",
+  "title": "Infrastructure Impact @ Planet Beyond",
+  "category": "experience",
+  "refCode": "EXP_PB_OPS",
+  "content": "At Planet Beyond, I modernized deployment workflows by architecting automated CI/CD pipelines using Jenkins, Docker, and Kubernetes[cite: 82, 133]. This transition effectively eliminated manual deployment errors and established a stable containerized environment for high-traffic services[cite: 14, 133]. I also implemented secure OAuth2 and JWT-based authentication for robust access control[cite: 83, 133]."
+  },
+{
+"id": "exp_pb_tourism",
+"title": "Full-Stack Development @ Planet Beyond",
+"category": "experience",
+"refCode": "EXP_PB_TRM",
+"content": "During my internship, I developed full-stack features for the Green Tourism and Book Store platforms using Spring Boot and React[cite: 81, 132]. I implemented administrative monitoring modules for complaint tracking and inventory management[cite: 16, 133]. I also built production-ready React Native features to align the mobile experience with the core web application[cite: 84, 11]."
+},
+{
+"id": "skills_arsenal",
+"title": "Technical Arsenal",
+"category": "skills",
+"refCode": "SKILLS_TOTAL",
+"content": "My stack includes expert-level Java (Spring Boot) and advanced Python (FastAPI/RAG)[cite: 101, 112]. I am proficient in Docker, Kubernetes, Jenkins, and GitHub Actions for DevOps orchestration[cite: 101, 114]. My AI toolkit centers on LangChain, FAISS, and ReAct loops for autonomous agent design[cite: 101, 115]. I hold certifications in Generative AI Developer (HEC) and Machine Learning (DeepLearning.AI)[cite: 103, 141]."
+}
+],
+[
+{
+"id": "about_01",
+"title": "Maaz Ahmad: Intelligence Architect",
+"category": "about",
+"refCode": "ABOUT_ME",
+"content": "I am a Software Engineering junior at NUST (CGPA 3.5) specializing in AI-driven intelligent systems. I bridge the gap between resilient backend infrastructure (Spring Boot/FastAPI) and high-level AI reasoning, specifically RAG pipelines and agentic workflows. My engineering mantra is 'Intelligence over Automation'—I build systems that reason, self-correct, and maintain a strict grounding in technical reality."
+},
+{
+"id": "proj_list_01",
+"title": "Engineering Records Portfolio",
+"category": "projects",
+"refCode": "PROJ_LIST",
+"content": "My primary engineering records include: 1. Smart AQI Monitoring System (IoT+AI), 2. Agentic Workflow Automation Platform (DAG-based agents), 3. Pharma Document RAG Chatbot (Semantic retrieval), 4. Green Tourism Admin Portal (Planet Beyond internship), 5. Book Store System (Full-stack with OAuth2/JWT), 6. CourseFlix Recommendation System (ML-based), 7. High-Performance URL Shortener, and 8. Library Management System."
+},
+{
+"id": "proj_aqi_01",
+"title": "Smart AQI Monitoring System",
+"category": "projects",
+"refCode": "REF_AQI_01",
+"content": "I developed a full-stack IoT platform for real-time AQI tracking across 20+ Pakistani cities using OpenMeteo API polling and real-time hardware telemetry. I engineered an ESP32 hardware prototype with MQ-series sensors that stream data via MQTT to a secure Spring Boot backend. I integrated a RAG-powered Llama-3.1 chatbot to provide health advice grounded in live sensor readings."
+},
+{
+"id": "proj_agentic_01",
+"title": "Agentic Workflow Automation Platform",
+"category": "projects",
+"refCode": "REF_AGT_02",
+"content": "I built a local-first AI orchestration engine for visually designing multi-step workflows using Directed Acyclic Graphs (DAGs). I engineered a custom ReAct execution loop with Llama 3.1 that observes its own errors and self-corrects via a 'Safety Net' logic—if an agent fails a tool call, the system detects the failure and forces a retry. It supports real-time execution streaming via NDJSON."
+},
+{
+"id": "proj_pharma_01",
+"title": "Pharma Document RAG Chatbot",
+"category": "projects",
+"refCode": "REF_PHR_03",
+"content": "I engineered a RAG system to process pharmaceutical PDFs using Sentence-Transformers for semantic chunking and FAISS for vector indexing. My implementation uses Groq-accelerated Llama-3.1 to generate sub-second responses with mandatory chunk-level citations, ensuring 100% domain relevance and eliminating clinical hallucinations."
+},
+{
+"id": "exp_pb_01",
+"title": "Infrastructure Impact: Planet Beyond",
+"category": "experience",
+"refCode": "EXP_PB",
+"content": "During my internship at Planet Beyond (Jul-Aug 2025), I modernized deployment workflows by architecting automated CI/CD pipelines using Jenkins, Docker, and Kubernetes. This transition effectively eliminated manual deployment errors. I also implemented secure OAuth2 and JWT-based authentication for the Green Tourism and Book Store platforms."
+},
+{
+"id": "skills_01",
+"title": "Technical Arsenal",
+"category": "skills",
+"refCode": "SKILLS",
+"content": "My stack includes expert-level Java (Spring Boot) and advanced Python (FastAPI/RAG). I am proficient in Docker, Kubernetes, and GitHub Actions for DevOps orchestration. My AI toolkit centers on LangChain, FAISS, and custom ReAct loops for autonomous agent design. I hold multiple certifications, including Generative AI Developer (HEC) and Machine Learning (DeepLearning.AI)."
+}
 ]
