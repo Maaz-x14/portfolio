@@ -8,8 +8,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebConfig {
-    @Value("${cors.allowed-origin}")
-    private String allowedOrigin;
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {
@@ -17,7 +15,8 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins(allowedOrigin)
+                        // This pattern covers all your Vercel deployments
+                        .allowedOriginPatterns("https://*.vercel.app", "https://portfolio-maaz-ahmad.vercel.app")
                         .allowedMethods("GET", "POST", "OPTIONS")
                         .allowedHeaders("*")
                         .exposedHeaders("*")
