@@ -1,4 +1,4 @@
-# 🧠 Intelligence-Driven Portfolio & RAG Vault
+# 🧠 Intelligence-Driven Portfolio
 
 This repository contains the full-stack architecture for a **high‑signal professional portfolio** and an integrated **Neural Synthesis Engine**. It bridges resilient backend infrastructure with high‑level AI reasoning, with a sharp focus on **Retrieval‑Augmented Generation (RAG)** and **Agentic Workflows**.
 
